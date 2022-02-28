@@ -31,8 +31,7 @@ def convert(hours, minutes=None):
             return
         else:
             return hours * 60 * 60. + minutes * 60
-
-
+        
     else:
         print("The function only accept int or float parameters")
         return
