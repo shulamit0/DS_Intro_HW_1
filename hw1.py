@@ -1,9 +1,5 @@
 def my_func(x1, x2, x3):
-    try:
-        x1 = float(x1)
-        x2 = float(x2)
-        x3 = float(x3)
-    except:
+    if not isinstance(x1, float) or not isinstance(x2, float) or not isinstance(x3, float):
         print("Error: parameters should be float")
         return
     if (x1 + x2 + x3 == 0):
@@ -11,33 +7,33 @@ def my_func(x1, x2, x3):
     return ((x1 + x2 + x3) * (x2 + x3) * x3) / (x1 + x2 + x3)
 
 
-# print(my_func(1, 3, 7))
-# print(my_func(-1.5, 3, -2.5))  # accepts float
-# print(my_func(-1.5, 3, -1.5))  # denominator equals zero
-# print(my_func(-1.5, 'six', -1.5))#not a float
+# print(my_func(1., 3., 7.))
+# print(my_func(-1.5, 3, -2.5))  # dont accepts int
+# print(my_func(-1.5, 3., -1.5))  # denominator equals zero
+# print(my_func(-1.5, 'six', -1.5))  # not a float
 
 
 def convert(hours, minutes=None):
-    if minutes == None:
-        try:
-            hours = float(hours)
-            if (hours < 0):
-                print("Input error!")
-            else:
-                return hours * 60 * 60
-        except:
-            print("Error: parameter should be float")
+    hour_int_float = isinstance(hours, int) or isinstance(hours, float)
+    minutes_int_float = isinstance(minutes, int) or isinstance(minutes, float)
 
-    else:
-        if not isinstance(hours, int) or not isinstance(minutes, int):
-            print("Error: parameters should be int")
+    if minutes == None and hour_int_float:
+        if (hours < 0):
+            print("Input error!")
+        else:
+            return hours * 60 * 60
+
+    elif hour_int_float and minutes_int_float:
+        if (hours < 0 or minutes < 0):
+            print("Input error!")
             return
         else:
-            if (hours < 0 or minutes < 0):
-                print("Input error!")
-                return
-            else:
-                return hours * 60 * 60 + minutes * 60
+            return hours * 60 * 60 + minutes * 60
+
+
+    else:
+        print("The function only accept int or float parameters")
+        return
 
 # print(convert(1.75))
 # print(convert(1.75,3))
