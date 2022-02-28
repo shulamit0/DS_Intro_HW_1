@@ -21,14 +21,14 @@ def convert(hours, minutes=None):
         if (hours < 0):
             print("Input error!")
         else:
-            return hours * 60 * 60
+            return hours * 60 * 60.
 
     elif hour_int_float and minutes_int_float:
         if (hours < 0 or minutes < 0):
             print("Input error!")
             return
         else:
-            return hours * 60 * 60 + minutes * 60
+            return hours * 60 * 60. + minutes * 60
 
 
     else:
