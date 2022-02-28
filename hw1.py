@@ -1,3 +1,4 @@
+#1
 def my_func(x1, x2, x3):
     if not isinstance(x1, float) or not isinstance(x2, float) or not isinstance(x3, float):
         print("Error: parameters should be float")
@@ -13,6 +14,7 @@ def my_func(x1, x2, x3):
 # print(my_func(-1.5, 'six', -1.5))  # not a float
 
 
+#2
 def convert(hours, minutes=None):
     hour_int_float = isinstance(hours, int) or isinstance(hours, float)
     minutes_int_float = isinstance(minutes, int) or isinstance(minutes, float)
@@ -35,9 +37,9 @@ def convert(hours, minutes=None):
         print("The function only accept int or float parameters")
         return
 
-# print(convert(1.75))
+# print(convert(1.75))#float
 # print(convert(1.75,3))
 # print(convert(1,3))
-# print(convert(-1.75))
-# print(convert(1,-3))
-# print(convert('1',3))
+# print(convert(-1.75))# dont negative
+# print(convert(1,-3))# dont negative
+# print(convert('1',3))# not int or float
