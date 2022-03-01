@@ -15,6 +15,7 @@ def my_func(x1, x2, x3):
 
 
 #2
+# function only accept: (int,int) or (float) all positive
 def convert(hours, minutes=None):
     hour_int_float = isinstance(hours, int) or isinstance(hours, float)
     minutes_int_float = isinstance(minutes, int) or isinstance(minutes, float)
@@ -34,8 +35,9 @@ def convert(hours, minutes=None):
             return hours * 60 * 60. + minutes * 60
         
     else:
-        print("The function only accept int or float parameters")
+        print("The function only accept (int,int) or (float) parameters")
         return
+    
 
 # print(convert(1.75))#float
 # print(convert(1.75,3))
@@ -43,3 +45,5 @@ def convert(hours, minutes=None):
 # print(convert(-1.75))# dont negative
 # print(convert(1,-3))# dont negative
 # print(convert('1',3))# not int or float
+
+
