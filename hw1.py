@@ -18,14 +18,15 @@ def my_func(x1, x2, x3):
 def convert(hours, minutes=None):
     hour_int_float = isinstance(hours, int) or isinstance(hours, float)
     minutes_int_float = isinstance(minutes, int) or isinstance(minutes, float)
-
+    
+    
     if minutes == None and hour_int_float:
         if (hours < 0):
             print("Input error!")
         else:
             return hours * 60 * 60.
 
-    elif hour_int_float and minutes_int_float:
+    elif isinstance(hours, int) and isinstance(minutes, int):
         if (hours < 0 or minutes < 0):
             print("Input error!")
             return
