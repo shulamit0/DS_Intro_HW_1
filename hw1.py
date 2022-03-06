@@ -34,6 +34,15 @@ def convert(hours, minutes=None):
         else:
             return hours * 60 * 60. + minutes * 60
         
+##If you want to allow reception of 2 FLOAT but my function only accept: (int,int) or (float) all positive    
+#     elif hour_int_float and minutes_int_float:
+#         if (hours < 0 or minutes < 0):
+#             print("Input error!")
+#             return
+#         else:
+#             return hours * 60 * 60. + minutes * 60.
+        
+        
     else:
         print("The function only accept (int,int) or (float) parameters")
         return
