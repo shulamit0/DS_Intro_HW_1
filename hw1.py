@@ -20,38 +20,25 @@ def convert(hours, minutes=None):
     hour_int_float = isinstance(hours, int) or isinstance(hours, float)
     minutes_int_float = isinstance(minutes, int) or isinstance(minutes, float)
     
-    
-    if minutes == None and hour_int_float:
-        if (hours < 0):
-            print("Input error!")
-        else:
-            return hours * 60 * 60.
 
-    elif isinstance(hours, int) and isinstance(minutes, int):
+    if hour_int_float and minutes_int_float:
         if (hours < 0 or minutes < 0):
             print("Input error!")
             return
         else:
-            return hours * 60 * 60. + minutes * 60
-        
-##If you want to allow reception of 2 FLOAT but my function only accept: (int,int) or (float) all positive    
-#     elif hour_int_float and minutes_int_float:
-#         if (hours < 0 or minutes < 0):
-#             print("Input error!")
-#             return
-#         else:
-#             return hours * 60 * 60. + minutes * 60.
-        
-        
+            return hours * 60 * 60. + minutes * 60.
+
+
     else:
-        print("The function only accept (int,int) or (float) parameters")
+        print("The function only accept 2 number int or float parameters all positive")
         return
+
     
 
-# print(convert(1.75))#float
+# print(convert(1.75))#1 float
 # print(convert(1.75,3))
 # print(convert(1,3))
-# print(convert(-1.75))# dont negative
+# print(convert(-1.75))# dont 1  num negative
 # print(convert(1,-3))# dont negative
 # print(convert('1',3))# not int or float
 
